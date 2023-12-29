@@ -12,29 +12,33 @@ function! InteractivelyAddIabbrev()
     execute "normal! l"
   endif
 
-  let iabbrev = "iabbrev " . word . " " . correction
+  let iabbrev = "Abolish " . word . " " . correction
+  execute iabbrev
+
   let abbrevs_file = "~/.vim/plugins/razzi-abbrevs/plugin/razzi-abbrevs.vim"
   let cmd = "!echo " . iabbrev . " >> " . abbrevs_file
   silent execute cmd
+
   redraw!
 endfunction
 
-iabbrev adn and
-iabbrev aroudn around
-iabbrev awy away
-iabbrev clickign clicking
-iabbrev conenct connect
-iabbrev control control
-iabbrev forunately fortunately
-iabbrev foucs focus
-iabbrev hte the
-iabbrev jsut just
-iabbrev keboard keyboard
-iabbrev muslces muscles
-iabbrev ocpy copy
-iabbrev propmt prompt
-iabbrev rae are
-iabbrev saerch search
-iabbrev serach search
-iabbrev somethign something
-iabbrev tping typing
+Abolish adn and
+Abolish aroudn around
+Abolish awy away
+Abolish clickign clicking
+Abolish conenct connect
+Abolish control control
+Abolish forunately fortunately
+Abolish foucs focus
+Abolish hte the
+Abolish jsut just
+Abolish keboard keyboard
+Abolish muslces muscles
+Abolish ocpy copy
+Abolish propmt prompt
+Abolish rae are
+Abolish saerch search
+Abolish serach search
+Abolish somethign something
+Abolish tping typing
+Abolish hten then
