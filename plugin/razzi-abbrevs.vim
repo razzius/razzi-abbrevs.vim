@@ -15,7 +15,8 @@ function! InteractivelyAddIabbrev()
   let iabbrev = "iabbrev " . word . " " . correction
   let abbrevs_file = "~/.vim/plugins/razzi-abbrevs/plugin/razzi-abbrevs.vim"
   let cmd = "!echo " . iabbrev . " >> " . abbrevs_file
-  execute cmd
+  silent execute cmd
+  redraw!
 endfunction
 
 iabbrev control control
