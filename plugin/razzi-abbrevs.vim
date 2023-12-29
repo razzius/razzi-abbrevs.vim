@@ -19,6 +19,22 @@ function! InteractivelyAddIabbrev()
   redraw!
 endfunction
 
-iabbrev control control
-iabbrev propmt prompt
+iabbrev adn and
+iabbrev aroudn around
+iabbrev awy away
+iabbrev clickign clicking
 iabbrev conenct connect
+iabbrev control control
+iabbrev forunately fortunately
+iabbrev foucs focus
+iabbrev hte the
+iabbrev jsut just
+iabbrev keboard keyboard
+iabbrev muslces muscles
+iabbrev ocpy copy
+iabbrev propmt prompt
+iabbrev rae are
+iabbrev saerch search
+iabbrev serach search
+iabbrev somethign something
+iabbrev tping typing
