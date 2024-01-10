@@ -47,3 +47,5 @@ Abolish serach search
 Abolish somethign something
 Abolish teh the
 Abolish tping typing
+Abolish urlpattersn urlpatterns
+Abolish whic which
