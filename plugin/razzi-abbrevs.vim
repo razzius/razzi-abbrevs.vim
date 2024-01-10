@@ -28,8 +28,11 @@ Abolish awy away
 Abolish clickign clicking
 Abolish compuer computer
 Abolish conenct connect
+Abolish constatnly constantly
 Abolish contorl control
 Abolish control control
+Abolish deafult default
+Abolish deiban debian
 Abolish enviornment environment
 Abolish forunately fortunately
 Abolish foucs focus
@@ -37,9 +40,12 @@ Abolish hte the
 Abolish hten then
 Abolish jsut just
 Abolish keboard keyboard
+Abolish lates latest
 Abolish muslces muscles
 Abolish ocpy copy
 Abolish optoins options
+Abolish ot to
+Abolish previus previous
 Abolish propmt prompt
 Abolish rae are
 Abolish saerch search
