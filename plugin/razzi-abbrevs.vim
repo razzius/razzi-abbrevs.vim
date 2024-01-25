@@ -56,3 +56,4 @@ Abolish tping typing
 Abolish urlpattersn urlpatterns
 Abolish whic which
 Abolish ato auto
+Abolish tryign trying
