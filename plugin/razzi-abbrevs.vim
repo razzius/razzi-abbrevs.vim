@@ -58,3 +58,5 @@ Abolish whic which
 Abolish ato auto
 Abolish tryign trying
 Abolish enidng ending
+Abolish liek like
+Abolish wih with
