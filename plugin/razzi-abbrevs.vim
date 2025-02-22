@@ -60,3 +60,6 @@ Abolish tryign trying
 Abolish enidng ending
 Abolish liek like
 Abolish wih with
+Abolish isntall install
+Abolish rqeuire require
+Abolish rsult result
