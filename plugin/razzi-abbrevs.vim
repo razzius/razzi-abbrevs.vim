@@ -15,72 +15,11 @@ function! InteractivelyAddIabbrev()
   let iabbrev = "Abolish " . word . " " . correction
   execute iabbrev
 
-  let abbrevs_file = "~/.vim/plugins/razzi-abbrevs/plugin/razzi-abbrevs.vim"
+  let abbrevs_file = "~/.vim/plugins/razzi-abbrevs/plugin/razzi-abbrevs-list.vim"
   let cmd = "!echo " . iabbrev . " >> " . abbrevs_file
   silent execute cmd
 
   redraw!
 endfunction
 
-Abolish adn and
-Abolish aroudn around
-Abolish awy away
-Abolish clickign clicking
-Abolish compuer computer
-Abolish conenct connect
-Abolish constatnly constantly
-Abolish contorl control
-Abolish control control
-Abolish deafult default
-Abolish deiban debian
-Abolish enviornment environment
-Abolish forunately fortunately
-Abolish foucs focus
-Abolish hte the
-Abolish hten then
-Abolish jsut just
-Abolish keboard keyboard
-Abolish lates latest
-Abolish muslces muscles
-Abolish ocpy copy
-Abolish optoins options
-Abolish ot to
-Abolish previus previous
-Abolish propmt prompt
-Abolish rae are
-Abolish saerch search
-Abolish serach search
-Abolish somethign something
-Abolish teh the
-Abolish tping typing
-Abolish urlpattersn urlpatterns
-Abolish whic which
-Abolish ato auto
-Abolish tryign trying
-Abolish enidng ending
-Abolish liek like
-Abolish wih with
-Abolish isntall install
-Abolish rqeuire require
-Abolish rsult result
-Abolish cna can
-Abolish reqiure require
-Abolish pcakage package
-Abolish dpeendencies dependencies
-Abolish tracing tracking
-Abolish grpahics graphics
-Abolish websties websites
-Abolish javascritp javascript
-Abolish javascrit javascript
-Abolish soem some
-Abolish manaer manager
-Abolish revolevs revolves
-Abolish liamctl limactl
-Abolish machiens machines
-Abolish confgi config
-Abolish virual virtual
-Abolish machien machine
-Abolish hackign hacking
-Abolish otu out
-Abolish dpeendencies dependencies
-Abolish uisng using
+source "razzi-abbrevs-list.vim"
