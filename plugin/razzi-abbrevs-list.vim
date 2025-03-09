@@ -61,3 +61,7 @@ Abolish otu out
 Abolish dpeendencies dependencies
 Abolish uisng using
 Abolish locl local
+Abolish depdencies dependencies
+Abolish lua_moudles lua_modules
+Abolish whcih which
+Abolish woudl would
