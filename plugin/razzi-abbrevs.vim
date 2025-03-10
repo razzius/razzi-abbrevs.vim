@@ -15,11 +15,9 @@ function! InteractivelyAddIabbrev()
   let iabbrev = "Abolish " . word . " " . correction
   execute iabbrev
 
-  let abbrevs_file = "~/.vim/plugins/razzi-abbrevs/plugin/razzi-abbrevs-list.vim"
-  let cmd = "!echo " . iabbrev . " >> " . abbrevs_file
-  silent execute cmd
-
-  redraw!
+  let abbrevs_file = expand("~/.vim/plugins/razzi-abbrevs/plugin/razzi-abbrevs-list.vim")
+  let old = readfile(abbrevs_file)
+  call writefile(old + [iabbrev], abbrevs_file)
 endfunction
 
 source "razzi-abbrevs-list.vim"
