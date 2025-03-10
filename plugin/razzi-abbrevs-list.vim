@@ -65,3 +65,14 @@ Abolish depdencies dependencies
 Abolish lua_moudles lua_modules
 Abolish whcih which
 Abolish woudl would
+Abolish deug debug
+Abolish tne the
+Abolish Seinding Sending
+Abolish shfit shift
+Abolish albe able
+Abolish htem them
+Abolish tierm timer
+Abolish grpahics graphics
+Abolish JavaScrpit JavaScript
+Abolish Consirtium Consortium
+Abolish cna can
