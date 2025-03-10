@@ -5,6 +5,11 @@ function! InteractivelyAddIabbrev()
   let word = getreg()
   let prompt = "Correction for " . word . ": "
   let correction = input(prompt, word)
+
+  " TODO better handling for the word not being at the end of the line.
+  " Also probably better to only read the word backwards so that if there's a
+  " different word immediately following the cursor, it won't be included
+  " as part of the fix.
   if col(".") == col("$")-1
     execute "normal! a" . correction
   else
