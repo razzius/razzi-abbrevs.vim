@@ -74,3 +74,5 @@ Abolish whcih which
 Abolish whic which
 Abolish wih with
 Abolish woudl would
+Abolish behaviro behavior
+Abolish funciton function
