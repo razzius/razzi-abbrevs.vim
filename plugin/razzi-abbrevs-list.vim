@@ -76,3 +76,12 @@ Abolish wih with
 Abolish woudl would
 Abolish behaviro behavior
 Abolish funciton function
+Abolish ahve have
+Abolish configuratoin configuration
+Abolish channesl channels
+Abolish enogh enough
+Abolish undestand understand
+Abolish wht what
+Abolish kinad kinda
+Abolish theroy theory
+Abolish adventre adventure
