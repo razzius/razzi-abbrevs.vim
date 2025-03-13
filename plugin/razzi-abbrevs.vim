@@ -1,8 +1,8 @@
 inoremap <silent> <C-f> <C-o>:call InteractivelyAddIabbrev()<cr>
 
 function! InteractivelyAddIabbrev()
-  execute 'normal! bviw"_d'
-  let word = getreg()
+  execute 'normal! bviw"ad'
+  let word = getreg('a')
   let prompt = "Correction for " . word . ": "
   let correction = input(prompt, word)
 
