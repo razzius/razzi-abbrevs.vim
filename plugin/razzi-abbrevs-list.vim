@@ -85,3 +85,17 @@ Abolish wht what
 Abolish kinad kinda
 Abolish theroy theory
 Abolish adventre adventure
+Abolish discussiosn discussions
+Abolish proably probably
+Abolish unusal unusual
+Abolish specifc specific
+Abolish terminlogy terminology
+Abolish geratest greatest
+Abolish strenght strength
+Abolish menas means
+Abolish fucntion function
+Abolish blcok block
+Abolish statemtns statements
+Abolish proramming programming
+Abolish chagne change
+Abolish piont point
