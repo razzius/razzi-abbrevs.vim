@@ -99,3 +99,9 @@ Abolish statemtns statements
 Abolish proramming programming
 Abolish chagne change
 Abolish piont point
+Abolish copule couple
+Abolish paproach approach
+Abolish keybaord keyboard
+Abolish spcific specific
+Abolish keybindign keybinding
+Abolish scratchign scratching
