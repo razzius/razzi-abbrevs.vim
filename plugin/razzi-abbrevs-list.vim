@@ -105,3 +105,8 @@ Abolish keybaord keyboard
 Abolish spcific specific
 Abolish keybindign keybinding
 Abolish scratchign scratching
+Abolish fiel file
+Abolish singel single
+Abolish yoru your
+Abolish applciation application
+Abolish pritn print
