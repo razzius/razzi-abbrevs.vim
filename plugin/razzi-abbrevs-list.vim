@@ -110,3 +110,13 @@ Abolish singel single
 Abolish yoru your
 Abolish applciation application
 Abolish pritn print
+Abolish acutal actual
+Abolish otuput output
+Abolish atatus status
+Abolish workign working
+Abolish remvoing removing
+Abolish absoluate absolute
+Abolish driectory directory
+Abolish soemthing something
+Abolish becuase because
+Abolish directoy directory
