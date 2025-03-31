@@ -120,3 +120,6 @@ Abolish driectory directory
 Abolish soemthing something
 Abolish becuase because
 Abolish directoy directory
+Abolish wiht with
+Abolish thier their
+Abolish tlaking talking
