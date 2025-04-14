@@ -123,3 +123,6 @@ Abolish directoy directory
 Abolish wiht with
 Abolish thier their
 Abolish tlaking talking
+Abolish withotu without
+Abolish tutorail tutorial
+Abolish defualt default
