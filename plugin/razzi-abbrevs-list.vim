@@ -126,3 +126,14 @@ Abolish tlaking talking
 Abolish withotu without
 Abolish tutorail tutorial
 Abolish defualt default
+Abolish musle muscle
+Abolish levae leave
+Abolish addictional additional
+Abolish optoin option
+Abolish applicatino application
+Abolish eitehr either
+Abolish rquires requires
+Abolish appliation application
+Abolish dpeendencies dependencies
+Abolish alein alien
+Abolish indendation indentation
