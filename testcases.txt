@@ -1,0 +1,27 @@
+1. simple
+
+adn<c-f> should prompt for text with "adn" then when you type c-t to transpose, and hit enter,
+it should replace the current word with "and".
+
+2. found
+
+adn<c-f> should now replace with "and" without prompting.
+
+3. cancel
+
+asdf<c-f> should prompt, but upon control-c, it should leave the word as it was before the abbr.
+
+4. line after
+
+ecoh|
+another line
+
+<c-f> should prompt as normal, but leave the second line alone.
+
+5. words after
+
+echo| more words
+
+-- scratch area --
+hi echofox there
+more lines
