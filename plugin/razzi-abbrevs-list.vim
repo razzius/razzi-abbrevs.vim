@@ -138,3 +138,4 @@ iabbrev dpeendencies dependencies
 iabbrev alein alien
 iabbrev indendation indentation
 iabbrev ecoh echo
+iabbrev si is
