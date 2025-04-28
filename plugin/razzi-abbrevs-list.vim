@@ -126,6 +126,7 @@ iabbrev tlaking talking
 iabbrev withotu without
 iabbrev tutorail tutorial
 iabbrev defualt default
+iabbrev calss class
 iabbrev musle muscle
 iabbrev levae leave
 iabbrev addictional additional
