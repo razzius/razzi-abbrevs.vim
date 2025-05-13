@@ -22,6 +22,10 @@ another line
 
 echo| more words
 
+6. quote after
+
+"ecoh|"
+
 -- scratch area --
 hi echofox there
 more lines

@@ -28,7 +28,7 @@ function! InteractivelyAddIabbrev()
 
   let end_of_line = col(".") == col("$") - 1
 
-  if ! end_of_line
+  if ! end_of_line || char == '"'
     execute 'normal! h'
   endif
 
@@ -42,7 +42,7 @@ function! InteractivelyAddIabbrev()
 
   if matching_abbr != ""
     execute "normal! gvd"
-    if ! end_of_line
+    if ! end_of_line || char == '"'
       execute "normal! i" . matching_abbr
       execute "normal! l"
     else
