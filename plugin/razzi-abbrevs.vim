@@ -29,10 +29,10 @@ function! InteractivelyAddIabbrev()
   let end_of_line = col(".") == col("$") - 1
 
   if ! end_of_line || char == '"'
-    execute 'normal! h'
+    normal! h
   endif
 
-  execute 'normal! vb"ay'
+  normal! vb"ay
   " Reset the cursor position in case the command is canceled
   normal `z
 
@@ -41,10 +41,10 @@ function! InteractivelyAddIabbrev()
   let matching_abbr = FindMatchingAbbrev(word)
 
   if matching_abbr != ""
-    execute "normal! gvd"
+    normal! gvd
     if ! end_of_line || char == '"'
       execute "normal! i" . matching_abbr
-      execute "normal! l"
+      normal! l
     else
       execute "normal! a" . matching_abbr
     endif
@@ -53,13 +53,13 @@ function! InteractivelyAddIabbrev()
 
   let prompt = "Correction for " . word . ": "
   let correction = input(prompt, word)
-  execute "normal! gvd"
+  normal! gvd
 
-  if end_of_line
-    execute "normal! a" . correction
-  else
+  if ! end_of_line || char == '"'
     execute "normal! i" . correction
     normal l
+  else
+    execute "normal! a" . correction
   endif
 
   let iabbrev = "iabbrev " . word . " " . correction
