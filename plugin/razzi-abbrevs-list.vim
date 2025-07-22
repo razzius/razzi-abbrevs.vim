@@ -144,3 +144,4 @@ iabbrev fridya friday
 iabbrev fucntions functions
 iabbrev fien fine
 iabbrev seeminly seemingly
+iabbrev symilnk symlink
