@@ -184,3 +184,7 @@ iabbrev terminasl terminals
 iabbrev everythign everything
 iabbrev telsl tells
 iabbrev instll install
+iabbrev matterss mattress
+iabbrev meidan median
+iabbrev subjet subject
+iabbrev topci topic
