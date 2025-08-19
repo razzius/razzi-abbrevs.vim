@@ -188,3 +188,5 @@ iabbrev matterss mattress
 iabbrev meidan median
 iabbrev subjet subject
 iabbrev topci topic
+iabbrev thougts thoughts
+iabbrev proces process
