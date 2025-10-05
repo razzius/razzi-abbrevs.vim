@@ -190,3 +190,7 @@ iabbrev subjet subject
 iabbrev topci topic
 iabbrev thougts thoughts
 iabbrev proces process
+iabbrev widht width
+iabbrev ceneter center
+iabbrev ordre order
+iabbrev permisison permission
