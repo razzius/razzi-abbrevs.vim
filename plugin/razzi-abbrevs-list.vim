@@ -195,3 +195,4 @@ iabbrev ceneter center
 iabbrev ordre order
 iabbrev permisison permission
 iabbrev Emtpy Empty
+iabbrev comand command
