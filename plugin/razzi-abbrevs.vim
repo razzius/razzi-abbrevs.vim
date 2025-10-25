@@ -1,10 +1,10 @@
-inoremap <C-f> <C-o>:call InteractivelyAddIabbrev()<cr>
+inoremap <C-f> <C-o>:call InteractivelyAddAbolish()<cr>
 
 let g:abbrevs_file = expand("~/.vim/plugins/razzi-abbrevs/plugin/razzi-abbrevs-list.vim")
 exec "source " . g:abbrevs_file
 
 function! FindMatchingAbbrev(word)
-  let check_abbrev = "iabbrev " . a:word
+  let check_abbrev = "Abolish " . a:word
 
   let abbrev_result = execute(check_abbrev)
 
@@ -20,7 +20,7 @@ function! FindMatchingAbbrev(word)
   return ""
 endfunction
 
-function! InteractivelyAddIabbrev()
+function! InteractivelyAddAbolish()
   normal mz
   let column = col('.')
   let line = getline('.')
@@ -62,9 +62,9 @@ function! InteractivelyAddIabbrev()
     execute "normal! a" . correction
   endif
 
-  let iabbrev = "iabbrev " . word . " " . correction
-  execute iabbrev
+  let abolish = "Abolish " . word . " " . correction
+  execute abolish
 
   let old = readfile(g:abbrevs_file)
-  call writefile(old + [iabbrev], g:abbrevs_file)
+  call writefile(old + [abolish], g:abbrevs_file)
 endfunction
