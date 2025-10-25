@@ -200,3 +200,4 @@ Abolish taek take
 Abolish masterd mastered
 Abolish papwer paper
 Abolish repostory repository
+Abolish environmetn environment
