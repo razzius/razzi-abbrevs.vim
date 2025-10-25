@@ -4,11 +4,9 @@ let g:abbrevs_file = expand("~/.vim/plugins/razzi-abbrevs/plugin/razzi-abbrevs-l
 exec "source " . g:abbrevs_file
 
 function! FindMatchingAbbrev(word)
-  let check_abbrev = "Abolish " . a:word
+  let abbrevs = system('cat ' . g:abbrevs_file)
 
-  let abbrev_result = execute(check_abbrev)
-
-  let lines = split(abbrev_result, "\n")
+  let lines = split(abbrevs, "\n")
 
   for line_text in lines
     let line = split(line_text)
