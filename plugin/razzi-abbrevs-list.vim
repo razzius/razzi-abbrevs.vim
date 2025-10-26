@@ -186,6 +186,8 @@ Abolish telsl tells
 Abolish instll install
 Abolish matterss mattress
 Abolish meidan median
+Abolish repari repair
+Abolish wdith width
 Abolish subjet subject
 Abolish topci topic
 Abolish thougts thoughts
