@@ -201,3 +201,12 @@ Abolish masterd mastered
 Abolish papwer paper
 Abolish repostory repository
 Abolish environmetn environment
+Abolish edn end
+Abolish bieng being
+Abolish infintie infinite
+Abolish defalut default
+Abolish avialble available
+Abolish ste set
+Abolish otuptu output
+Abolish __cleanpu __cleanup
+Abolish suod sudo
