@@ -212,3 +212,6 @@ Abolish ste set
 Abolish otuptu output
 Abolish __cleanpu __cleanup
 Abolish suod sudo
+Abolish keyboad keyboard
+Abolish thanksfully thankfully
+Abolish bweteen between
