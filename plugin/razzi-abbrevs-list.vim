@@ -215,3 +215,4 @@ Abolish suod sudo
 Abolish keyboad keyboard
 Abolish thanksfully thankfully
 Abolish bweteen between
+Abolish raeadlink readlink
