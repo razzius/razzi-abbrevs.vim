@@ -216,3 +216,9 @@ Abolish keyboad keyboard
 Abolish thanksfully thankfully
 Abolish bweteen between
 Abolish raeadlink readlink
+Abolish nad and
+Abolish shoudl should
+Abolish asfe safe
+Abolish espansion expansion
+Abolish coed code
+Abolish ufnction function
