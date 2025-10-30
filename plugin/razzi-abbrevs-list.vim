@@ -266,3 +266,11 @@ Abolish utiliteis utilities
 Abolish funcitons functions
 Abolish reomte remote
 Abolish raeadlink readlink
+Abolish thre there
+Abolish wantd wanted
+Abolish oepn open
+Abolish repostiry repository
+Abolish stoped stopped
+Abolish intalling installing
+Abolish fucnitonaly functionality
+Abolish recreatd recreated
