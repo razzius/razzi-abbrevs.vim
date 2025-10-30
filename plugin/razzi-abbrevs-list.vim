@@ -274,3 +274,9 @@ Abolish stoped stopped
 Abolish intalling installing
 Abolish fucnitonaly functionality
 Abolish recreatd recreated
+Abolish stuent student
+Abolish capitalizaiton capitalization
+Abolish functin function
+Abolish reesult result
+Abolish headng heading
+Abolish relpacement replacement
