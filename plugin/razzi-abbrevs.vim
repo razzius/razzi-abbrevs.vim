@@ -18,6 +18,30 @@ function! FindMatchingAbbrev(word)
   return ""
 endfunction
 
+function! IsUpper(char)
+  return char2nr('A') <= char2nr(a:char) && char2nr(a:char) <= char2nr('Z')
+endfunction
+
+function! TransferCase(source, target)
+  " Apply the capitalization of the source word to the target word.
+  " The target word is to be passed in as all lowercase.
+  let result = ""
+  let index = 0
+  for target_letter in a:target
+    let origin_letter = a:source[index]
+    if IsUpper(origin_letter)
+      let cased_letter = toupper(target_letter)
+    else
+      let cased_letter = target_letter
+    endif
+
+    let result .= cased_letter
+
+    let index += 1
+  endfor
+  return result
+endfunction
+
 function! InteractivelyAddAbolish()
   normal mz
   let column = col('.')
@@ -34,30 +58,34 @@ function! InteractivelyAddAbolish()
   " Reset the cursor position in case the command is canceled
   normal `z
 
-  let word = getreg('a')
+  let original_word = getreg('a')
+  let word = tolower(original_word)
 
   let matching_abbr = FindMatchingAbbrev(word)
 
   if matching_abbr != ""
+    let replacement = TransferCase(original_word, matching_abbr)
     normal! gvd
     if ! end_of_line || char == '"'
-      execute "normal! i" . matching_abbr
+      execute "normal! i" . replacement
       normal! l
     else
-      execute "normal! a" . matching_abbr
+      execute "normal! a" . replacement
     endif
     return
   endif
 
   let prompt = "Correction for " . word . ": "
   let correction = input(prompt, word)
+  let case_match = TransferCase(original_word, correction)
+
   normal! gvd
 
   if ! end_of_line || char == '"'
-    execute "normal! i" . correction
+    execute "normal! i" . case_match
     normal l
   else
-    execute "normal! a" . correction
+    execute "normal! a" . case_match
   endif
 
   let abolish = "Abolish " . word . " " . correction
