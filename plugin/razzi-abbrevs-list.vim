@@ -326,3 +326,4 @@ Abolish quadartic quadratic
 Abolish folloiwng following
 Abolish yeils yields
 Abolish multiplyign multiplying
+Abolish functin function
