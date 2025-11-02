@@ -327,3 +327,6 @@ Abolish folloiwng following
 Abolish yeils yields
 Abolish multiplyign multiplying
 Abolish functin function
+Abolish pritnf printf
+Abolish cosnt const
+Abolish poen open
