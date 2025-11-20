@@ -377,3 +377,10 @@ Abolish meothod method
 Abolish lambad lambda
 Abolish jaav java
 Abolish probem problem
+Abolish reutrn return
+Abolish flie file
+Abolish drivign driving
+Abolish mappign mapping
+Abolish jav java
+Abolish foudn found
+Abolish squre square
