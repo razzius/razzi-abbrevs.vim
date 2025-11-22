@@ -384,3 +384,5 @@ Abolish mappign mapping
 Abolish jav java
 Abolish foudn found
 Abolish squre square
+Abolish iteself itself
+Abolish direoctory directory
