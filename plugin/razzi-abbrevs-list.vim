@@ -11,7 +11,6 @@ Abolish confgi config
 Abolish Consirtium Consortium
 Abolish constatnly constantly
 Abolish contorl control
-Abolish control control
 Abolish deafult default
 Abolish deiban debian
 Abolish depdencies dependencies
