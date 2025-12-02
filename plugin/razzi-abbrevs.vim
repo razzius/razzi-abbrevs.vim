@@ -77,6 +77,12 @@ function! InteractivelyAddAbolish()
 
   let prompt = "Correction for " . word . ": "
   let correction = input(prompt, word)
+
+  if (word == correction)
+    echo "\nabbrev failed, correction same as word"
+    return
+  endif
+
   let case_match = TransferCase(original_word, correction)
 
   normal! gvd
