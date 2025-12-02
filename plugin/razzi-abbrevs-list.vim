@@ -411,3 +411,8 @@ Abolish exept except
 Abolish keybaordinterrupt keyboardinterrupt
 Abolish elfi elif
 Abolish exti exit
+Abolish smalelr smaller
+Abolish stroy story
+Abolish pritnln println
+Abolish silnet silent
+Abolish celanup cleanup
