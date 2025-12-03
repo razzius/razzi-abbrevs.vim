@@ -416,3 +416,13 @@ Abolish stroy story
 Abolish pritnln println
 Abolish silnet silent
 Abolish celanup cleanup
+Abolish satus status
+Abolish contineu continue
+Abolish conitneu continue
+Abolish contineue continue
+Abolish conitnue continue
+Abolish cointneu continue
+Abolish cointue continue
+Abolish cointnue continue
+Abolish cointinue continue
+Abolish mvoe move
