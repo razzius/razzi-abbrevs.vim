@@ -22,6 +22,11 @@ function! IsUpper(char)
   return char2nr('A') <= char2nr(a:char) && char2nr(a:char) <= char2nr('Z')
 endfunction
 
+function! s:doSubstitute(from, to)
+  let cmd = 'substitute/' . a:from . '/' . a:to
+  execute cmd
+endfunction
+
 function! TransferCase(source, target)
   " Apply the capitalization of the source word to the target word.
   " The target word is to be passed in as all lowercase.
@@ -54,7 +59,7 @@ function! InteractivelyAddAbolish()
     normal! h
   endif
 
-  normal! vb"ay
+  normal! hviw"ay
   " Reset the cursor position in case the command is canceled
   normal `z
 
@@ -65,13 +70,8 @@ function! InteractivelyAddAbolish()
 
   if matching_abbr != ""
     let replacement = TransferCase(original_word, matching_abbr)
-    normal! gvd
-    if ! end_of_line || char == '"'
-      execute "normal! i" . replacement
-      normal! l
-    else
-      execute "normal! a" . replacement
-    endif
+    call s:doSubstitute(original_word, replacement)
+    normal `z
     return
   endif
 
@@ -83,16 +83,10 @@ function! InteractivelyAddAbolish()
     return
   endif
 
-  let case_match = TransferCase(original_word, correction)
+  let replacement = TransferCase(original_word, correction)
 
-  normal! gvd
-
-  if ! end_of_line || char == '"'
-    execute "normal! i" . case_match
-    normal l
-  else
-    execute "normal! a" . case_match
-  endif
+  call s:doSubstitute(original_word, replacement)
+  normal `z
 
   let abolish = "Abolish " . word . " " . correction
   execute abolish
