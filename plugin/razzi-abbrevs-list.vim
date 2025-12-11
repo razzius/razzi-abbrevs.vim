@@ -426,3 +426,9 @@ Abolish cointue continue
 Abolish cointnue continue
 Abolish cointinue continue
 Abolish mvoe move
+Abolish stae state
+Abolish satte state
+Abolish dependenies dependencies
+Abolish bionomial binomial
+Abolish naem name
+Abolish systmes systems
