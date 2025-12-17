@@ -432,3 +432,5 @@ Abolish dependenies dependencies
 Abolish bionomial binomial
 Abolish naem name
 Abolish systmes systems
+Abolish idnetify identify
+Abolish wrogn wrong
