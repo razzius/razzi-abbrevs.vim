@@ -434,3 +434,5 @@ Abolish naem name
 Abolish systmes systems
 Abolish idnetify identify
 Abolish wrogn wrong
+Abolish vairable variable
+Abolish veriosns versions
