@@ -495,3 +495,24 @@ Abolish shoulnt shouldn't
 Abolish pormpt prompt
 Abolish tthe the
 Abolish equlas equals
+Abolish arvg argv
+Abolish sl ls
+Abolish eco echo
+set isk+=-
+iabbrev string-emtpy string-empty
+Abolish unsyminl unsymlink
+Abolish dpeends depends
+Abolish chosing choosing
+Abolish brw brew
+Abolish environmen environment
+Abolish versoins versions
+Abolish lcoal local
+Abolish follwoing following
+Abolish downlaod download
+Abolish controler controller
+Abolish giulde guide
+Abolish accoring according
+Abolish buildin building
+Abolish opneing opening
+Abolish zipfiels zipfiles
+Abolish fi if
