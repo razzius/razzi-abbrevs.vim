@@ -481,8 +481,8 @@ Abolish wihtout without
 Abolish eror error
 Abolish xtx txt
 Abolish recognzie recognize
-set isk+=.
-iabbrev file.xtx file.txt
+" set isk+=.
+" iabbrev file.xtx file.txt
 Abolish diryt dirty
 Abolish grpe grep
 Abolish startsiwth startswith
@@ -498,8 +498,8 @@ Abolish equlas equals
 Abolish arvg argv
 Abolish sl ls
 Abolish eco echo
-set isk+=-
-iabbrev string-emtpy string-empty
+" set isk+=-
+" iabbrev string-emtpy string-empty
 Abolish unsyminl unsymlink
 Abolish dpeends depends
 Abolish chosing choosing
@@ -516,3 +516,23 @@ Abolish buildin building
 Abolish opneing opening
 Abolish zipfiels zipfiles
 Abolish fi if
+Abolish taht that
+Abolish statr start
+Abolish machne machine
+Abolish instructios instructions
+Abolish cleints clients
+Abolish pdoman podman
+Abolish asnwer answer
+Abolish ansewrs answers
+Abolish fwe few
+Abolish hwoever however
+Abolish oyu you
+Abolish panci panic
+Abolish keyoard keyboard
+Abolish agina again
+Abolish standardzie standardize
+Abolish gradel gradle
+Abolish erverse reverse
+Abolish builtings builtins
+Abolish hre here
+Abolish conitains contains
