@@ -552,3 +552,8 @@ Abolish directoires directories
 Abolish emtpy empty
 Abolish basenmae basename
 Abolish fidn find
+Abolish replce replace
+Abolish direcotry directory
+Abolish insdie inside
+Abolish optins options
+Abolish thougth thought
