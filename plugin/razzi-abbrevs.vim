@@ -1,6 +1,6 @@
 inoremap <C-f> <C-o>:call InteractivelyAddAbolish()<cr>
 
-let g:abbrevs_file = expand("~/.vim/plugins/razzi-abbrevs/plugin/razzi-abbrevs-list.vim")
+let g:abbrevs_file = expand("%:p:h") . "/razzi-abbrevs-list.vim"
 exec "source " . g:abbrevs_file
 
 function! FindMatchingAbbrev(word)
@@ -71,6 +71,8 @@ function! InteractivelyAddAbolish()
   if matching_abbr != ""
     let replacement = TransferCase(original_word, matching_abbr)
     call s:doSubstitute(original_word, replacement)
+    " If the replacement is a different length than the original word, the
+    " cursor will be off
     normal `z
     return
   endif
