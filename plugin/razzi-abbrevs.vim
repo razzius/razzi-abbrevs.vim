@@ -47,6 +47,13 @@ function! TransferCase(source, target)
   return result
 endfunction
 
+function! DoReplacement(original_word, replacement)
+  call s:doSubstitute(a:original_word, a:replacement)
+  " If the replacement is a different length than the original word, the
+  " cursor will be off
+  normal `z
+endfunction
+
 function! InteractivelyAddAbolish()
   normal mz
   let column = col('.')
@@ -70,10 +77,7 @@ function! InteractivelyAddAbolish()
 
   if matching_abbr != ""
     let replacement = TransferCase(original_word, matching_abbr)
-    call s:doSubstitute(original_word, replacement)
-    " If the replacement is a different length than the original word, the
-    " cursor will be off
-    normal `z
+    call DoReplacement(original_word, replacement)
     return
   endif
 
@@ -87,8 +91,7 @@ function! InteractivelyAddAbolish()
 
   let replacement = TransferCase(original_word, correction)
 
-  call s:doSubstitute(original_word, replacement)
-  normal `z
+  call DoReplacement(original_word, replacement)
 
   let abolish = "Abolish " . word . " " . correction
   execute abolish
