@@ -1,6 +1,6 @@
 inoremap <C-f> <C-o>:call InteractivelyAddAbolish()<cr>
 
-let g:abbrevs_file = expand("%:p:h") . "/razzi-abbrevs-list.vim"
+let g:abbrevs_file = expand("<sfile>:p:h") . "/razzi-abbrevs-list.vim"
 exec "source " . g:abbrevs_file
 
 function! FindMatchingAbbrev(word)
