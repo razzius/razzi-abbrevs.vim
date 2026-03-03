@@ -23,7 +23,7 @@ function! IsUpper(char)
 endfunction
 
 function! s:doSubstitute(from, to)
-  let cmd = 'substitute/' . a:from . '/' . a:to
+  let cmd = 'substitute/.*\zs' . a:from . '/' . a:to
   execute cmd
 endfunction
 
