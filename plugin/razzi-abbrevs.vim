@@ -49,9 +49,22 @@ endfunction
 
 function! DoReplacement(original_word, replacement)
   call s:doSubstitute(a:original_word, a:replacement)
+  normal `z
+
   " If the replacement is a different length than the original word, the
   " cursor will be off
-  normal `z
+  let original_chars = strchars(a:original_word)
+  let replacement_chars = strchars(a:replacement)
+
+  if original_chars < replacement_chars
+    for i in range(1, replacement_chars - original_chars)
+      normal l
+    endfor
+  elseif original_chars > replacement_chars
+    for i in range(1, original_chars - replacement_chars)
+      normal h
+    endfor
+  endif
 endfunction
 
 function! InteractivelyAddAbolish()
