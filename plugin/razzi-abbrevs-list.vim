@@ -630,3 +630,12 @@ Abolish smiplest simplest
 Abolish grvaitiational gravitational
 Abolish gravitiational gravitational
 Abolish heeavier heavier
+Abolish graviational gravitational
+Abolish subsitute substitute
+Abolish exapmle example
+Abolish icnrease increase
+Abolish extentions extensions
+Abolish rpetty pretty
+Abolish extensios extensions
+Abolish extnsions extensions
+Abolish thtan than
