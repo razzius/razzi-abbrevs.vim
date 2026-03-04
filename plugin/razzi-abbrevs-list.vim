@@ -662,3 +662,7 @@ Abolish shorutcuts shortcuts
 Abolish hacy hacky
 Abolish selectd selected
 Abolish shorutcuts shortcuts
+Abolish contnet content
+Abolish obserer observer
+Abolish chidl child
+Abolish descripton description
