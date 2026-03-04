@@ -642,3 +642,5 @@ Abolish thtan than
 Abolish fils files
 Abolish youcan you can
 Abolish strating starting
+Abolish selectd selected
+Abolish shorutcuts shortcuts
