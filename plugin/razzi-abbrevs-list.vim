@@ -666,3 +666,6 @@ Abolish contnet content
 Abolish obserer observer
 Abolish chidl child
 Abolish descripton description
+Abolish selectd selected
+Abolish shorutcuts shortcuts
+Abolish hacy hacky
