@@ -642,3 +642,5 @@ Abolish yoru your
 Abolish youcan you can
 Abolish zipfiels zipfiles
 iabbrev THe The
+Abolish seconsd seconds
+Abolish sinc since
