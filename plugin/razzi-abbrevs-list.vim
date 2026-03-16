@@ -644,3 +644,7 @@ Abolish zipfiels zipfiles
 iabbrev THe The
 Abolish seconsd seconds
 Abolish sinc since
+Abolish eaxmple example
+Abolish ferquently frequently
+Abolish guids guides
+Abolish speicified specified
