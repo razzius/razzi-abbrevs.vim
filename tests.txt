@@ -7,6 +7,10 @@ another line
 
 ecoh more words
 
+"ecoh
+
+ecoh"
+
 "ecoh"
 
 cursror
@@ -16,5 +20,7 @@ cursror
 ecoh!!
 
 more wors
+
+middle ecoh middle
 
 added text so not at eof
