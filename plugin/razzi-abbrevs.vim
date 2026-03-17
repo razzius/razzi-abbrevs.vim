@@ -42,68 +42,99 @@ function! TransferCase(source, target)
   return result
 endfunction
 
-function! DoReplacement(replacement, end_of_line)
+function! DoReplacement(replacement)
   normal! gvd
-  if ! a:end_of_line || LookingAtQuote()
+  if ! AtEndOfLine() || LookingAtQuote()
     let inserter = "i"
   else
     let inserter = "a"
   endif
   let cmd = "normal! " . inserter . a:replacement
   execute cmd
-  if inserter == "i"
-    normal! l
+  if inserter == "i" && ! AtEndOfLine()
+    call feedkeys("\<Right>")
   endif
+endfunction
+
+function! AtEndOfLine()
+  return col(".") == col("$") - 1
+endfunction
+
+function! CharUnderCursor()
+  let column = col('.')
+  let line = getline('.')
+  let char = line[column - 1]
+  return char
 endfunction
 
 function LookingAtQuote()
-  let column = col('.')
-  let line = getline('.')
-  let char = line[column - 1]
-  return char == '"'
+  let char = CharUnderCursor()
+  return char == '"' || char == "|"
 endfunction
 
-function! InteractivelyAddAbolish()
-  normal mz
-  let column = col('.')
-  let line = getline('.')
-  let char = line[column - 1]
 
-  let end_of_line = col(".") == col("$") - 1
+function LookingAtSpace()
+  let char = CharUnderCursor()
+  return char == ' '
+endfunction
 
-  if ! end_of_line || LookingAtQuote()
-    normal! h
-  endif
+function! LookingAtSpecialChar()
+  return CharUnderCursor() < char2nr('0')
+endfunction
 
-  normal! hviw"ay
-  " Reset the cursor position in case the command is canceled
-  normal `z
-
-  let original_word = getreg('a')
-  let word = tolower(original_word)
-
-  let matching_abbr = FindMatchingAbbrev(word)
-
+function! DetermineReplacement(word)
+  let matching_abbr = FindMatchingAbbrev(a:word)
   if matching_abbr != ""
-    let replacement = TransferCase(original_word, matching_abbr)
-    call DoReplacement(replacement, end_of_line)
-    return
+    return matching_abbr
   endif
 
-  let prompt = "Correction for " . word . ": "
-  let correction = input(prompt, word)
+  let prompt = "Correction for " . a:word . ": "
+  let correction = input(prompt, a:word)
 
-  if (word == correction)
-    echo "\nabbrev failed, correction same as word"
-    return
+  if (a:word == correction)
+    return ""
   endif
 
-  let replacement = TransferCase(original_word, correction)
-  call DoReplacement(replacement, end_of_line)
-
-  let abolish = "Abolish " . word . " " . correction
+  let abolish = "Abolish " . a:word . " " . correction
   execute abolish
 
   let old = readfile(g:abbrevs_file)
   call writefile(old + [abolish], g:abbrevs_file)
+  return correction
+endfunction
+
+function! InteractivelyAddAbolish()
+  normal mz
+  let started_at_eol = AtEndOfLine()
+
+  let on_space = LookingAtSpace()
+
+  if LookingAtSpecialChar()
+    normal! h
+  endif
+
+  normal! viw"ay
+  normal! `>
+  " if ! at_eol
+  "   call feedkeys("\<Right>")
+  " endif
+
+  " Reset the cursor position in case the command is canceled
+  normal `z
+  if ! started_at_eol && ! AtEndOfLine() && !LookingAtSpace()
+    call feedkeys("\<Right>")
+  endif
+
+  let original_word = getreg('a')
+  let word = tolower(original_word)
+
+  let replacement = DetermineReplacement(word)
+
+  if replacement == ""
+    echo "\nabbrev failed, correction same as word"
+    return
+  endif
+
+  let replacement = TransferCase(original_word, replacement)
+  call DoReplacement(replacement)
 endfunction
