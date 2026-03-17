@@ -1,4 +1,4 @@
-inoremap <C-f> <C-o>:call InteractivelyAddAbolish()<cr>
+inoremap <silent> <C-f> <C-o>:call InteractivelyAddAbolish()<cr>
 
 let g:abbrevs_file = expand("<sfile>:p:h") . "/razzi-abbrevs-list.vim"
 exec "source " . g:abbrevs_file
@@ -22,11 +22,6 @@ function! IsUpper(char)
   return char2nr('A') <= char2nr(a:char) && char2nr(a:char) <= char2nr('Z')
 endfunction
 
-function! s:doSubstitute(from, to)
-  let cmd = 'substitute/.*\zs' . a:from . '/' . a:to
-  execute cmd
-endfunction
-
 function! TransferCase(source, target)
   " Apply the capitalization of the source word to the target word.
   " The target word is to be passed in as all lowercase.
@@ -47,24 +42,25 @@ function! TransferCase(source, target)
   return result
 endfunction
 
-function! DoReplacement(original_word, replacement)
-  call s:doSubstitute(a:original_word, a:replacement)
-  normal `z
-
-  " If the replacement is a different length than the original word, the
-  " cursor will be off
-  let original_chars = strchars(a:original_word)
-  let replacement_chars = strchars(a:replacement)
-
-  if original_chars < replacement_chars
-    for i in range(1, replacement_chars - original_chars)
-      normal l
-    endfor
-  elseif original_chars > replacement_chars
-    for i in range(1, original_chars - replacement_chars)
-      normal h
-    endfor
+function! DoReplacement(replacement, end_of_line)
+  normal! gvd
+  if ! a:end_of_line || LookingAtQuote()
+    let inserter = "i"
+  else
+    let inserter = "a"
   endif
+  let cmd = "normal! " . inserter . a:replacement
+  execute cmd
+  if inserter == "i"
+    normal! l
+  endif
+endfunction
+
+function LookingAtQuote()
+  let column = col('.')
+  let line = getline('.')
+  let char = line[column - 1]
+  return char == '"'
 endfunction
 
 function! InteractivelyAddAbolish()
@@ -75,7 +71,7 @@ function! InteractivelyAddAbolish()
 
   let end_of_line = col(".") == col("$") - 1
 
-  if ! end_of_line || char == '"'
+  if ! end_of_line || LookingAtQuote()
     normal! h
   endif
 
@@ -90,7 +86,7 @@ function! InteractivelyAddAbolish()
 
   if matching_abbr != ""
     let replacement = TransferCase(original_word, matching_abbr)
-    call DoReplacement(original_word, replacement)
+    call DoReplacement(replacement, end_of_line)
     return
   endif
 
@@ -103,8 +99,7 @@ function! InteractivelyAddAbolish()
   endif
 
   let replacement = TransferCase(original_word, correction)
-
-  call DoReplacement(original_word, replacement)
+  call DoReplacement(replacement, end_of_line)
 
   let abolish = "Abolish " . word . " " . correction
   execute abolish

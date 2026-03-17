@@ -26,7 +26,23 @@ echo| more words
 
 "ecoh|"
 
+7. cursor position after replacement
+
+cursror|
+
+<c-f> should end with the cursor at the end:
+
+cursor|
+
+Without careful handling, the cursor would move to another position
+in the word if the replacement has a different number of letters.
+
 -- scratch area --
+echo more words
+"ecoh"
 hi echofox there
-more lines
+words more words
+"words more words|"
+words go here
+"echo here text" echo here
 typo fofofo fofo
