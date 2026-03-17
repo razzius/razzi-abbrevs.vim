@@ -650,3 +650,12 @@ Abolish guids guides
 Abolish speicified specified
 Abolish initializgin initializing
 Abolish featrures features
+Abolish wrod word
+Abolish cursror cursor
+iabbrev THis This
+Abolish replacment replacement
+Abolish wouold would
+Abolish promtp prompt
+Abolish wors words
+Abolish worsd words
+Abolish theer there
