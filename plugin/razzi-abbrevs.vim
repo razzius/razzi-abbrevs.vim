@@ -41,6 +41,10 @@ function! TransferCase(source, target)
   return result
 endfunction
 
+function! AtEndOfLine()
+  return col("$") == col(".")
+endfunction
+
 function! CharUnderCursor()
   let column = col('.')
   let line = getline('.')
@@ -98,7 +102,7 @@ function! InteractivelyAddAbolish()
 
   " This relies on set virtualedit=onemore enabled in insert mode.
   " Consider refactoring so that it doesn't require this config.
-  if started_at_special
+  if started_at_special && !AtEndOfLine()
     call feedkeys("\<Right>")
   endif
 endfunction
