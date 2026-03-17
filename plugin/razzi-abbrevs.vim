@@ -1,4 +1,5 @@
 inoremap <silent> <C-f> <C-o>:call InteractivelyAddAbolish()<cr>
+" inoremap <C-f> <C-o>:call JustTellMeColumn()<cr>
 
 let g:abbrevs_file = expand("<sfile>:p:h") . "/razzi-abbrevs-list.vim"
 exec "source " . g:abbrevs_file
@@ -42,23 +43,26 @@ function! TransferCase(source, target)
   return result
 endfunction
 
-function! DoReplacement(replacement)
+function! DoReplacement(replacement, start_eol)
   normal! gvd
   let special_char = LookingAtSpecialChar()
-  if ! AtEndOfLine() || special_char
-    let inserter = "i"
-  else
+  let at_end_of_line = AtEndOfLine()
+  " if at_end_of_line || special_char
+  if a:start_eol
     let inserter = "a"
+  else
+    let inserter = "i"
   endif
+  " let msg = input("i/a? " . inserter . " SPCL? " . special_char . " nowEOL? " . at_end_of_line . " wasEOL? " . a:start_eol)
   let cmd = "normal! " . inserter . a:replacement
   execute cmd
-  if inserter == "i" && ! special_char
+  if special_char
     call feedkeys("\<Right>")
   endif
 endfunction
 
 function! AtEndOfLine()
-  return col(".") == col("$") - 1
+  return col("$") == col(".")
 endfunction
 
 function! CharUnderCursor()
@@ -67,12 +71,6 @@ function! CharUnderCursor()
   let char = line[column - 1]
   return char
 endfunction
-
-function LookingAtQuote()
-  let char = CharUnderCursor()
-  return char == '"' || char == "|"
-endfunction
-
 
 function LookingAtSpace()
   let char = CharUnderCursor()
@@ -104,9 +102,17 @@ function! DetermineReplacement(word)
   return correction
 endfunction
 
+function! JustTellMeColumn()
+  echom "COL is " . virtcol(".") . " and EOL: " . AtEndOfLine()
+  messages
+endfunction
+
 function! InteractivelyAddAbolish()
-  normal mz
+  " normal mz
+  let col = col(".")
   let started_at_eol = AtEndOfLine()
+
+  " let msg = input("COL! " . col . " S EOL? " . started_at_eol)
 
   let on_space = LookingAtSpace()
 
@@ -116,15 +122,12 @@ function! InteractivelyAddAbolish()
 
   normal! viw"ay
   normal! `>
-  " if ! at_eol
-  "   call feedkeys("\<Right>")
-  " endif
 
   " Reset the cursor position in case the command is canceled
-  normal `z
-  if ! started_at_eol && ! AtEndOfLine() && !LookingAtSpace()
-    call feedkeys("\<Right>")
-  endif
+  " normal `z
+  " if ! started_at_eol && ! AtEndOfLine() && !LookingAtSpace()
+  "   call feedkeys("\<Right>")
+  " endif
 
   let original_word = getreg('a')
   let word = tolower(original_word)
@@ -137,5 +140,5 @@ function! InteractivelyAddAbolish()
   endif
 
   let replacement = TransferCase(original_word, replacement)
-  call DoReplacement(replacement)
+  call DoReplacement(replacement, started_at_eol)
 endfunction
