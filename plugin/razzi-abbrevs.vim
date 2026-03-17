@@ -45,21 +45,23 @@ function! TransferCase(source, target)
 endfunction
 
 function! DoReplacement(replacement, start_eol)
-  normal! gvd
-  let special_char = LookingAtSpecialChar()
-  let at_end_of_line = AtEndOfLine()
-  " if at_end_of_line || special_char
-  if a:start_eol
-    let inserter = "a"
-  else
-    let inserter = "i"
-  endif
-  " let msg = input("i/a? " . inserter . " SPCL? " . special_char . " nowEOL? " . at_end_of_line . " wasEOL? " . a:start_eol)
-  let cmd = "normal! " . inserter . a:replacement
+  let cmd = "normal! gvc" . a:replacement
   execute cmd
-  if special_char
-    call feedkeys("\<Right>")
-  endif
+  " normal! gvd
+  " let special_char = LookingAtSpecialChar()
+  " let at_end_of_line = AtEndOfLine()
+  " " if at_end_of_line || special_char
+  " if a:start_eol
+  "   let inserter = "a"
+  " else
+  "   let inserter = "i"
+  " endif
+  " " let msg = input("i/a? " . inserter . " SPCL? " . special_char . " nowEOL? " . at_end_of_line . " wasEOL? " . a:start_eol)
+  " let cmd = "normal! " . inserter . a:replacement
+  " execute cmd
+  " if special_char
+  "   call feedkeys("\<Right>")
+  " endif
 endfunction
 
 function! AtEndOfLine()
@@ -71,11 +73,6 @@ function! CharUnderCursor()
   let line = getline('.')
   let char = line[column - 1]
   return char
-endfunction
-
-function LookingAtSpace()
-  let char = CharUnderCursor()
-  return char == ' '
 endfunction
 
 function! LookingAtSpecialChar()
@@ -108,22 +105,13 @@ function! InteractivelyAddAbolish()
   let col = col(".")
   let started_at_eol = AtEndOfLine()
 
-  " let msg = input("COL! " . col . " S EOL? " . started_at_eol)
+  let started_at_special = LookingAtSpecialChar()
 
-  let on_space = LookingAtSpace()
-
-  if LookingAtSpecialChar()
+  if started_at_special
     normal! h
   endif
 
   normal! viw"ay
-  normal! `>
-
-  " Reset the cursor position in case the command is canceled
-  " normal `z
-  " if ! started_at_eol && ! AtEndOfLine() && !LookingAtSpace()
-  "   call feedkeys("\<Right>")
-  " endif
 
   let original_word = getreg('a')
   let word = tolower(original_word)
@@ -137,4 +125,8 @@ function! InteractivelyAddAbolish()
 
   let replacement = TransferCase(original_word, replacement)
   call DoReplacement(replacement, started_at_eol)
+
+  if started_at_special
+    call feedkeys("\<Right>")
+  endif
 endfunction
