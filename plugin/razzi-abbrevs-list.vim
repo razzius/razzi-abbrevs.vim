@@ -648,3 +648,5 @@ Abolish eaxmple example
 Abolish ferquently frequently
 Abolish guids guides
 Abolish speicified specified
+Abolish initializgin initializing
+Abolish featrures features
