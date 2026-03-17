@@ -1,8 +1,6 @@
 inoremap <silent> <C-f> <C-o>:call InteractivelyAddAbolish()<cr>
-" inoremap <C-f> <C-o>:call JustTellMeColumn()<cr>
 
-let g:abbrevs_file = expand("<sfile>:p:h") . "/razzi-abbrevs-list.vim"
-exec "source " . g:abbrevs_file
+let g:abbrevs_file = expand("~/.vim/after/plugin/abolish.vim")
 
 function! FindMatchingAbbrev(word)
   let abbrevs = system('cat ' . g:abbrevs_file)
@@ -11,6 +9,9 @@ function! FindMatchingAbbrev(word)
 
   for line_text in lines
     let line = split(line_text)
+    if line_text == '' || line[0] != 'Abolish'
+      continue
+    endif
     if line[1] == a:word
       return line[2]
     endif
@@ -100,11 +101,6 @@ function! DetermineReplacement(word)
   let old = readfile(g:abbrevs_file)
   call writefile(old + [abolish], g:abbrevs_file)
   return correction
-endfunction
-
-function! JustTellMeColumn()
-  echom "COL is " . virtcol(".") . " and EOL: " . AtEndOfLine()
-  messages
 endfunction
 
 function! InteractivelyAddAbolish()
