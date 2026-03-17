@@ -96,6 +96,8 @@ function! InteractivelyAddAbolish()
   let cmd = "normal! gvc" . capitalized
   execute cmd
 
+  " This relies on set virtualedit=onemore enabled in insert mode.
+  " Consider refactoring so that it doesn't require this config.
   if started_at_special
     call feedkeys("\<Right>")
   endif
