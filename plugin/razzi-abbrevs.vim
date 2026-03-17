@@ -9,10 +9,7 @@ function! FindMatchingAbbrev(word)
 
   for line_text in lines
     let line = split(line_text)
-    if line_text == '' || line[0] != 'Abolish'
-      continue
-    endif
-    if line[1] == a:word
+    if line_text != '' && line[0] == 'Abolish' && line[1] == a:word
       return line[2]
     endif
   endfor
@@ -42,30 +39,6 @@ function! TransferCase(source, target)
     let index += 1
   endfor
   return result
-endfunction
-
-function! DoReplacement(replacement, start_eol)
-  let cmd = "normal! gvc" . a:replacement
-  execute cmd
-  " normal! gvd
-  " let special_char = LookingAtSpecialChar()
-  " let at_end_of_line = AtEndOfLine()
-  " " if at_end_of_line || special_char
-  " if a:start_eol
-  "   let inserter = "a"
-  " else
-  "   let inserter = "i"
-  " endif
-  " " let msg = input("i/a? " . inserter . " SPCL? " . special_char . " nowEOL? " . at_end_of_line . " wasEOL? " . a:start_eol)
-  " let cmd = "normal! " . inserter . a:replacement
-  " execute cmd
-  " if special_char
-  "   call feedkeys("\<Right>")
-  " endif
-endfunction
-
-function! AtEndOfLine()
-  return col("$") == col(".")
 endfunction
 
 function! CharUnderCursor()
@@ -101,10 +74,6 @@ function! DetermineReplacement(word)
 endfunction
 
 function! InteractivelyAddAbolish()
-  " normal mz
-  let col = col(".")
-  let started_at_eol = AtEndOfLine()
-
   let started_at_special = LookingAtSpecialChar()
 
   if started_at_special
@@ -123,8 +92,9 @@ function! InteractivelyAddAbolish()
     return
   endif
 
-  let replacement = TransferCase(original_word, replacement)
-  call DoReplacement(replacement, started_at_eol)
+  let capitalized = TransferCase(original_word, replacement)
+  let cmd = "normal! gvc" . capitalized
+  execute cmd
 
   if started_at_special
     call feedkeys("\<Right>")
