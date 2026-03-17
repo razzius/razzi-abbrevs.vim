@@ -659,3 +659,5 @@ Abolish promtp prompt
 Abolish wors words
 Abolish worsd words
 Abolish theer there
+Abolish rigth right
+Abolish featrues features
