@@ -44,14 +44,15 @@ endfunction
 
 function! DoReplacement(replacement)
   normal! gvd
-  if ! AtEndOfLine() || LookingAtQuote()
+  let special_char = LookingAtSpecialChar()
+  if ! AtEndOfLine() || special_char
     let inserter = "i"
   else
     let inserter = "a"
   endif
   let cmd = "normal! " . inserter . a:replacement
   execute cmd
-  if inserter == "i" && ! AtEndOfLine()
+  if inserter == "i" && ! special_char
     call feedkeys("\<Right>")
   endif
 endfunction

@@ -32,17 +32,31 @@ cursror|
 
 <c-f> should end with the cursor at the end:
 
-cursor|
+cursror|
 
 Without careful handling, the cursor would move to another position
 in the word if the replacement has a different number of letters.
 
+8. cursor position starting in middle of word
+
+curs|ror
+
+9. multiple special characters and end of word
+
+ecoh|!!
+
+should become:
+
+echo|!!
+
+
 -- scratch area --
 echo more words
-"ecoh"
+"echo""
+"ecoh"""
 hi echofox there
 words more words
-"words more words|"
+"words more wors|"
 words go here
 "echo here text" echo here
 typo fofofo fofo
