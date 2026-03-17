@@ -49,6 +49,13 @@ should become:
 
 echo|!!
 
+10. Replaced word is last word on line with multiple words
+
+some ecoh|
+
+becomes:
+
+some echo|
 
 -- scratch area --
 echo more words
